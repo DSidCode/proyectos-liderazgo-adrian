@@ -4,230 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>🌟 Misiones de Papá Dani para mi Explorador Adrián 🌟</title>
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 20px;
-            background-color: #e0f7fa; /* Azul muy claro */
-            color: #333;
-            line-height: 1.6;
-            text-align: center;
-        }
-        .container {
-            max-width: 900px;
-            margin: 20px auto;
-            background-color: #ffffff;
-            padding: 30px;
-            border-radius: 20px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-            border: 5px solid #ff7043; /* Naranja quemado */
-        }
-        h1 {
-            color: #d32f2f; /* Rojo oscuro */
-            font-size: 2.5em;
-            margin-bottom: 5px;
-            text-shadow: 2px 2px #ffcdd2;
-        }
-        h2 {
-            color: #0d47a1; /* Azul oscuro */
-            font-size: 1.8em;
-            margin-top: 30px;
-            border-bottom: 3px solid #80deea;
-            padding-bottom: 10px;
-        }
-        h3 {
-            color: #ff6f00; /* Naranja brillante */
-            font-size: 1.4em;
-            margin-top: 25px;
-        }
-        p {
-            font-size: 1.1em;
-            margin-bottom: 15px;
-            text-align: left;
-        }
-        .activity-box {
-            background-color: #e8f5e9; /* Verde muy claro */
-            border-left: 8px solid #388e3c; /* Verde oscuro */
-            padding: 20px;
-            margin: 25px 0;
-            border-radius: 10px;
-            text-align: left;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-        .activity-box strong {
-            color: #0d47a1; /* Azul oscuro */
-        }
-        .youtube-tip {
-            background-color: #fffde7; /* Amarillo muy claro */
-            border-left: 8px solid #ffb300; /* Amarillo-naranja */
-            padding: 15px;
-            margin-top: 20px;
-            border-radius: 8px;
-            font-style: italic;
-            font-size: 0.95em;
-        }
-        .footer {
-            margin-top: 40px;
-            font-size: 0.9em;
-            color: #777;
-        }
-        .note {
-            background-color: #fff3e0; /* Naranja muy claro */
-            border-left: 8px solid #ff7043; /* Naranja quemado */
-            padding: 15px;
-            margin-top: 30px;
-            border-radius: 8px;
-            font-style: italic;
-        }
-        /* --- Estilos para el Header de Navegación (Responsivo) --- */
-        .main-header {
-            background-color: #0d47a1; /* Azul oscuro */
-            padding: 10px 15px;
-            border-radius: 15px;
-            margin-bottom: 30px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-        }
-        .main-nav ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-        }
-        .main-nav li {
-            text-align: center;
-            flex: 1;
-            position: relative; /* Para el tooltip */
-        }
-        .main-nav a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 0.9em; /* Botones más pequeños */
-            padding: 8px 12px;
-            border-radius: 8px;
-            transition: background-color 0.3s ease;
-            display: inline-block; /* Ajusta el tamaño al contenido */
-        }
-        .main-nav a:hover, .main-nav a.active {
-            background-color: #ff7043; /* Naranja quemado */
-        }
-        .main-nav a span {
-            visibility: hidden; /* Oculto por defecto */
-            opacity: 0;
-            width: 220px;
-            background-color: #ff7043; /* Naranja para que combine */
-            color: #fff;
-            text-align: center;
-            border-radius: 6px;
-            padding: 10px;
-            position: absolute;
-            z-index: 10;
-            bottom: 140%; /* Posición sobre el botón */
-            left: 50%;
-            transform: translateX(-50%);
-            transition: opacity 0.3s ease;
-            font-size: 0.8em;
-            font-weight: normal;
-            pointer-events: none; /* Evita que interfiera con el hover */
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-        }
-        /* Flecha para el tooltip */
-        .main-nav a span::after {
-            content: "";
-            position: absolute;
-            top: 100%;
-            left: 50%;
-            margin-left: -5px;
-            border-width: 5px;
-            border-style: solid;
-            border-color: #ff7043 transparent transparent transparent;
-        }
-        .main-nav li:hover a span {
-            visibility: visible;
-            opacity: 1;
-        }
-        /* --- Estilos para las misiones interactivas --- */
-        details {
-            background-color: #fdfdfd;
-            border-radius: 10px;
-            margin-bottom: 20px;
-            border: 1px solid #e0e0e0;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-            transition: box-shadow 0.3s ease;
-        }
-        details:hover {
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-        }
-        summary {
-            padding: 5px 15px;
-            cursor: pointer;
-            outline: none;
-            list-style: none; /* Oculta el marcador por defecto */
-        }
-        summary::-webkit-details-marker {
-            display: none; /* Oculta el marcador en Chrome/Safari */
-        }
-        /* El div de la actividad dentro del 'details' no necesita margen superior */
-        details > .activity-box { margin-top: 0; border-top: 1px solid #eee; border-left-width: 0; border-top-left-radius: 0; border-top-right-radius: 0;}
-
-        /* --- Estilos para el botón de completar misión --- */
-        .complete-btn {
-            display: inline-block;
-            background-color: #2196F3; /* Azul brillante */
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 1em;
-            font-weight: bold;
-            margin-top: 20px;
-            transition: all 0.3s ease;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-        }
-        .complete-btn:hover {
-            background-color: #1976D2;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-        }
-        .complete-btn:disabled {
-            background-color: #9E9E9E; /* Gris */
-            cursor: not-allowed;
-            box-shadow: none;
-        }
-        details.completed > summary h2 {
-            text-decoration: line-through;
-            color: #757575;
-        }
-        /* --- Estilos para controles --- */
-        .controls {
-            margin-top: 30px;
-            padding-top: 20px;
-            border-top: 1px solid #eee;
-        }
-        #reset-progress-btn {
-            background-color: #f44336; /* Rojo */
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 0.9em;
-            font-weight: bold;
-            transition: background-color 0.3s ease;
-        }
-        #reset-progress-btn:hover {
-            background-color: #d32f2f; /* Rojo oscuro */
-        }
-    </style>
+    <link rel="icon" href="michiblue.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
     <div class="container">
         <header class="main-header">
             <nav class="main-nav">
                 <ul>
+                    <li><a href="index.html">Inicio<span>Volver a la página principal.</span></a></li>
                     <li><a href="Aventuras.html">Aventuras Creativas<span>Ideas originales con materiales caseros.</span></a></li>
                     <li><a href="Aventuras-2.html" class="active">Misiones Interactivas<span>Desafíos de ingenio, creatividad y emociones.</span></a></li>
                     <li><a href="Misiones-de-papa.html">Proyectos de Liderazgo<span>Retos para usar tu ingenio y creatividad.</span></a></li>
@@ -339,87 +124,18 @@
         </div>
 
         <div class="footer">
-            Hecho con todo el corazón para Adrián.
+            <p>Hecho con todo el corazón para Adrián.</p>
+            <div class="youtube-link">
+                <a href="https://www.youtube.com/@MichiBlue28" target="_blank" title="Ver los videos en YouTube">
+                    <img src="michiblue.svg" alt="Canal de YouTube MichiBlue">
+                </a>
+            </div>
         </div>
     </div>
 
     <!-- Librería para la animación de confeti -->
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const storageKey = 'adrianMissionsProgress';
-
-            // Función para actualizar la interfaz de una misión completada
-            function markMissionAsCompleted(missionElement) {
-                const button = missionElement.querySelector('.complete-btn');
-                missionElement.classList.add('completed');
-                if (button) {
-                    button.textContent = '¡Misión Lograda! 🎉';
-                    button.disabled = true;
-                }
-            }
-
-            // Función para reiniciar la interfaz de una misión
-            function resetMissionState(missionElement) {
-                const button = missionElement.querySelector('.complete-btn');
-                missionElement.classList.remove('completed');
-                if (button) {
-                    button.textContent = 'Marcar como Misión Cumplida';
-                    button.disabled = false;
-                }
-            }
-
-            const allMissions = document.querySelectorAll('details[data-mission-id]');
-
-            // 1. Cargar el progreso desde localStorage cuando la página se carga
-            const savedProgress = JSON.parse(localStorage.getItem(storageKey)) || {};
-            allMissions.forEach(mission => {
-                const missionId = mission.dataset.missionId;
-                if (savedProgress[missionId]) {
-                    markMissionAsCompleted(mission);
-                }
-            });
-
-            // 2. Añadir listeners a los botones para guardar el progreso al hacer clic
-            document.querySelectorAll('.complete-btn').forEach(button => {
-                button.addEventListener('click', function() {
-                    const missionElement = this.closest('details');
-                    const missionId = missionElement.dataset.missionId;
-
-                    if (missionId) {
-                        // ¡Lanzar confeti para celebrar!
-                        confetti({
-                            particleCount: 150,
-                            spread: 90,
-                            origin: { y: 0.6 },
-                            colors: ['#ff7043', '#0d47a1', '#388e3c', '#ffb300', '#2196F3']
-                        });
-
-                        // Actualizar la interfaz
-                        markMissionAsCompleted(missionElement);
-
-                        // Guardar en localStorage
-                        const currentProgress = JSON.parse(localStorage.getItem(storageKey)) || {};
-                        currentProgress[missionId] = true;
-                        localStorage.setItem(storageKey, JSON.stringify(currentProgress));
-                    }
-                });
-            });
-
-            // 3. Añadir listener al botón de reiniciar progreso
-            const resetButton = document.getElementById('reset-progress-btn');
-            if (resetButton) {
-                resetButton.addEventListener('click', function() {
-                    if (confirm('¿Estás seguro de que quieres reiniciar todo el progreso? Las misiones volverán a estar sin completar.')) {
-                        localStorage.removeItem(storageKey);
-                        allMissions.forEach(mission => {
-                            resetMissionState(mission);
-                        });
-                    }
-                });
-            }
-        });
-    </script>
+    <script src="js/scripts.js"></script>
 </body>
 
 </html>
