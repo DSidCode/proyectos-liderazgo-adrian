@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌟 Misiones de Papá Dani para mi Explorador Adrián 🌟</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #e0f7fa; /* Azul muy claro */
+            color: #333;
+            line-height: 1.6;
+            text-align: center;
+        }
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+            border: 5px solid #ff7043; /* Naranja quemado */
+        }
+        h1 {
+            color: #d32f2f; /* Rojo oscuro */
+            font-size: 2.5em;
+            margin-bottom: 5px;
+            text-shadow: 2px 2px #ffcdd2;
+        }
+        h2 {
+            color: #0d47a1; /* Azul oscuro */
+            font-size: 1.8em;
+            margin-top: 30px;
+            border-bottom: 3px solid #80deea;
+            padding-bottom: 10px;
+        }
+        h3 {
+            color: #ff6f00; /* Naranja brillante */
+            font-size: 1.4em;
+            margin-top: 25px;
+        }
+        p {
+            font-size: 1.1em;
+            margin-bottom: 15px;
+            text-align: left;
+        }
+        .activity-box {
+            background-color: #e8f5e9; /* Verde muy claro */
+            border-left: 8px solid #388e3c; /* Verde oscuro */
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 10px;
+            text-align: left;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .activity-box strong {
+            color: #0d47a1; /* Azul oscuro */
+        }
+        .youtube-tip {
+            background-color: #fffde7; /* Amarillo muy claro */
+            border-left: 8px solid #ffb300; /* Amarillo-naranja */
+            padding: 15px;
+            margin-top: 20px;
+            border-radius: 8px;
+            font-style: italic;
+            font-size: 0.95em;
+        }
+        .footer {
+            margin-top: 40px;
+            font-size: 0.9em;
+            color: #777;
+        }
+        .note {
+            background-color: #fff3e0; /* Naranja muy claro */
+            border-left: 8px solid #ff7043; /* Naranja quemado */
+            padding: 15px;
+            margin-top: 30px;
+            border-radius: 8px;
+            font-style: italic;
+        }
+        /* --- Estilos para el Header de Navegación (Responsivo) --- */
+        .main-header {
+            background-color: #0d47a1; /* Azul oscuro */
+            padding: 10px 15px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+        .main-nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        .main-nav li {
+            text-align: center;
+            flex: 1;
+            position: relative; /* Para el tooltip */
+        }
+        .main-nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.9em; /* Botones más pequeños */
+            padding: 8px 12px;
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+            display: inline-block; /* Ajusta el tamaño al contenido */
+        }
+        .main-nav a:hover, .main-nav a.active {
+            background-color: #ff7043; /* Naranja quemado */
+        }
+        .main-nav a span {
+            visibility: hidden; /* Oculto por defecto */
+            opacity: 0;
+            width: 220px;
+            background-color: #ff7043; /* Naranja para que combine */
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 10px;
+            position: absolute;
+            z-index: 10;
+            bottom: 140%; /* Posición sobre el botón */
+            left: 50%;
+            transform: translateX(-50%);
+            transition: opacity 0.3s ease;
+            font-size: 0.8em;
+            font-weight: normal;
+            pointer-events: none; /* Evita que interfiera con el hover */
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        /* Flecha para el tooltip */
+        .main-nav a span::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: #ff7043 transparent transparent transparent;
+        }
+        .main-nav li:hover a span {
+            visibility: visible;
+            opacity: 1;
+        }
+        /* --- Estilos para las misiones interactivas --- */
+        details {
+            background-color: #fdfdfd;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #e0e0e0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            transition: box-shadow 0.3s ease;
+        }
+        details:hover {
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        summary {
+            padding: 5px 15px;
+            cursor: pointer;
+            outline: none;
+            list-style: none; /* Oculta el marcador por defecto */
+        }
+        summary::-webkit-details-marker {
+            display: none; /* Oculta el marcador en Chrome/Safari */
+        }
+        /* El div de la actividad dentro del 'details' no necesita margen superior */
+        details > .activity-box { margin-top: 0; border-top: 1px solid #eee; border-left-width: 0; border-top-left-radius: 0; border-top-right-radius: 0;}
+
+        /* --- Estilos para el botón de completar misión --- */
+        .complete-btn {
+            display: inline-block;
+            background-color: #2196F3; /* Azul brillante */
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: bold;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        .complete-btn:hover {
+            background-color: #1976D2;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+        .complete-btn:disabled {
+            background-color: #9E9E9E; /* Gris */
+            cursor: not-allowed;
+            box-shadow: none;
+        }
+        details.completed > summary h2 {
+            text-decoration: line-through;
+            color: #757575;
+        }
+        /* --- Estilos para controles --- */
+        .controls {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+        }
+        #reset-progress-btn {
+            background-color: #f44336; /* Rojo */
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.9em;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+        #reset-progress-btn:hover {
+            background-color: #d32f2f; /* Rojo oscuro */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="main-header">
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="Aventuras.html">Aventuras Creativas<span>Ideas originales con materiales caseros.</span></a></li>
+                    <li><a href="Aventuras-2.html" class="active">Misiones Interactivas<span>Desafíos de ingenio, creatividad y emociones.</span></a></li>
+                    <li><a href="Misiones-de-papa.html">Proyectos de Liderazgo<span>Retos para usar tu ingenio y creatividad.</span></a></li>
+                </ul>
+            </nav>
+        </header>
+        <h1>Misiones de Papá Dani para mi Explorador Adrián</h1>
+        <p><em>Escrito y diseñado con todo el corazón, desde Madrid.</em></p>
+        <p>¡Hola, campeón! Papá Dani por acá. He estado pensando mucho en las cosas que te encantan y por eso creé un nuevo plan para nosotros. A partir de hoy, no vamos a hacer "actividades" sino **MISIONES**. Porque sé que tú eres un gran líder, un genio que siempre encuentra la mejor manera de hacer las cosas.</p>
+        <p>La psicóloga y los profes me han contado, principalmente a mamá, que te va súper bien en el colegio, que resuelves las cosas a tu manera y que eres el jefe de tu propio camino. ¡Estoy muy orgulloso de ti! Por eso, quiero que estas misiones te ayuden a demostrar lo pilo y brillante que eres.</p>
+
+        <hr>
+
+        <details data-mission-id="mission-1">
+            <summary><h2>🪐 Misión #1: El Rescate Matemático en el Planeta Marte 🪐</h2></summary>
+            <div class="activity-box">
+                <h3>Objetivo de la Misión</h3>
+                <p><strong>Compañera de Misión: Cualquiera del equipo.</strong></p>
+                <p>La misión es simple, pero muy importante: la tripulación de la nave M1-R ha aterrizado de emergencia en Marte, ¡y necesitan que un genio de las matemáticas los rescate! Tu misión, capitán, es llegar hasta ellos usando tus habilidades con los números y la estrategia.</p>
+                <h3>Materiales de la Misión</h3>
+                <p>• LEGO (muchos, de todos los colores)<br>• Dos figuras (una de un astronauta y otra de una nave espacial)<br>• Un dado<br>• Papel y lápiz<br>• ¡Mucha concentración y ganas de salvar el día!</p>
+                <h3>Pasos a Seguir (con la ayuda de tu compañera)</h3>
+                <ol>
+                    <li><strong>Construyan la Base en Marte:</strong> Con tu compañera, usa los LEGO para armar un mapa en el piso o en una mesa grande que parezca el planeta Marte. Creen caminos, cráteres y montañas con las fichas.</li>
+                    <li><strong>¡El Astronauta te Espera!:</strong> Pongan la figura del astronauta en un punto lejano del mapa y la figura de la nave en la base. ¡Esa nave eres tú, Adrián!</li>
+                    <li><strong>El Reto de los Números:</strong> Ahora, para mover la nave, tendrás que resolver retos matemáticos. Cada vez que tires el dado, tu compañera te hará una pregunta.<br><br><strong>Ejemplo de Reto:</strong> "Si tiras un 4, la nave se mueve 4 pasos. Pero antes, debes resolver un problema. Si un astronauta necesita 3 tanques de oxígeno y son 5 astronautas, ¿cuántos tanques necesitan en total?". ¡Tú le das la respuesta y avanzas!</li>
+                    <li><strong>Gana el Líder:</strong> La misión termina cuando tu nave rescata al astronauta. ¡Felicitaciones, Capitán! Has salvado a toda la tripulación.</li>
+                </ol>
+                <div class="youtube-tip">
+                    🎬 <strong>Idea para el Video:</strong> Graben la misión como si fuera un documental de la NASA. Puedes narrar lo que está pasando, explicar cómo resolviste cada problema y mostrar el momento épico del rescate. ¡Se verá increíble!</p>
+                </div>
+                <button class="complete-btn">Marcar como Misión Cumplida</button>
+            </div>
+        </details>
+        
+        <details data-mission-id="mission-2">
+            <summary><h2>🚀 Misión #2: El Laberinto de las Emociones 🚀</h2></summary>
+            <div class="activity-box">
+                <h3>Objetivo de la Misión</h3>
+                <p><strong>Compañera de Misión: Cualquiera del equipo.</strong></p>
+                <p>A veces los dinosaurios se enojan y los astronautas se ponen tristes. En esta misión, vas a ayudar a los personajes a encontrar el camino en un laberinto de emociones. El objetivo es que tú seas el guía y les muestres cómo se sienten y qué hacer con eso.</p>
+                <h3>Materiales de la Misión</h3>
+                <p>• LEGO<br>• Papel grande o cartulina<br>• Lápices de colores<br>• Figuras de tus personajes favoritos</p>
+                <h3>Pasos a Seguir (con la ayuda de tu compañera)</h3>
+                <ol>
+                    <li><strong>Construyan el Laberinto:</strong> Con tu compañera, usa los LEGO para armar un laberinto con varios caminos y curvas. Cada sección puede tener un color diferente que represente una emoción (rojo para el enojo, azul para la tristeza, verde para la calma).</li>
+                    <li><strong>El Viaje del Héroe:</strong> Tomen sus figuras y cuenten una historia. Empiecen por un lado del laberinto, y tu compañera puede decir "Tu personaje está en un camino de color rojo y está muy enojado porque no puede encontrar su nave. ¿Qué le dirías para que se calme?".</li>
+                    <li><strong>El Poder de las Palabras:</strong> Guía a tu personaje por el laberinto, y en cada sección, explícale a tu compañera lo que siente el personaje y cómo puedes ayudarlo. El objetivo es llegar al final del laberinto, donde el personaje encontrará un lugar de calma.</li>
+                </ol>
+                <div class="youtube-tip">
+                    🎬 <strong>Idea para el Video:</strong> Graben el laberinto y el recorrido de los personajes. Puedes narrar la historia con mucho sentimiento, dándoles voz a los personajes, y explicando cómo los guiaste a un lugar seguro.
+                </div>
+                <button class="complete-btn">Marcar como Misión Cumplida</button>
+            </div>
+        </details>
+
+        <details data-mission-id="mission-3">
+            <summary><h2>🧪 Misión #3: El Experimento del Volcán de la Calma 🧪</h2></summary>
+            <div class="activity-box">
+                <h3>Objetivo de la Misión</h3>
+                <p><strong>Compañera de Misión: Cualquiera del equipo.</strong></p>
+                <p>La energía que tienes, campeón, es como un volcán que a veces quiere estallar. En esta misión, vas a ser un científico que va a dominar esa energía. El objetivo es que aprendas a controlar la "erupción" para que sea un momento de juego y no de desorden.</p>
+                <h3>Materiales de la Misión</h3>
+                <p>• Bicarbonato de sodio<br>• Vinagre<br>• Un poco de colorante de comida (si tienen)<br>• Una botella pequeña de plástico<br>• Un poco de plastilina para hacer el volcán</p>
+                <h3>Pasos a Seguir (con la ayuda de tu compañera)</h3>
+                <ol>
+                    <li><strong>Construyan el Volcán:</strong> Con tu compañera, usa la plastilina para moldear un volcán alrededor de la botella de plástico. Asegúrense de que se vea bien chévere.</li>
+                    <li><strong>La Energía Adentro:</strong> Explíquenle a tu compañera que dentro del volcán está la energía, como la tuya cuando te sientes lleno de ganas de correr y saltar. Pongan una cucharada de bicarbonato dentro de la botella.</li>
+                    <li><strong>El Control de la Erupción:</strong> Ahora viene la parte más importante. Tu compañera va a usar el vinagre para crear la erupción, pero tú vas a dar la señal. Tomen una respiración profunda, aguanten, y cuando estén listos, digan "¡FUERZA!" y viertan el vinagre.</li>
+                </ol>
+                <div class="youtube-tip">
+                    🎬 <strong>Idea para el Video:</strong> Filmen la erupción en cámara lenta para que se vea súper poderosa. Puedes narrar el video, explicando que así como el volcán, la energía también se puede controlar con una respiración profunda.
+                </div>
+                <button class="complete-btn">Marcar como Misión Cumplida</button>
+            </div>
+        </details>
+
+        <details data-mission-id="mission-4">
+            <summary><h2>🗺️ Misión #4: El Mapa del Tesoro Piloto 🗺️</h2></summary>
+            <div class="activity-box">
+                <h3>Objetivo de la Misión</h3>
+                <p><strong>Compañera de Misión: Cualquiera del equipo.</strong></p>
+                <p>En esta misión, tu inteligencia y tu capacidad de liderazgo te llevarán a un tesoro secreto. El objetivo es que uses tus habilidades con los números y las letras para ser el único que pueda descifrar el mapa y encontrar la recompensa.</p>
+                <h3>Materiales de la Misión</h3>
+                <p>• Un mapa dibujado en papel (lo puede dibujar tu compañera)<br>• Papel y lápiz<br>• Un libro de cuentos<br>• ¡El tesoro! (puede ser un dulce, un carro, o lo que más te guste)</p>
+                <h3>Pasos a Seguir (con la ayuda de tu compañera)</h3>
+                <ol>
+                    <li><strong>Elaboración del Mapa:</strong> Pídele a tu compañera que esconda un tesoro y que haga un mapa del lugar, pero en vez de dibujar, debe escribir acertijos. Por ejemplo: "Para llegar al tesoro, debes resolver 20 + 5. La respuesta es el número de pasos que debes dar".</li>
+                    <li><strong>El Piloto Matemático:</strong> Sigue las instrucciones del mapa. Cada vez que encuentres un acertijo, resuélvelo. Usa tus habilidades de español para leer y las de matemáticas para resolver los problemas.</li>
+                    <li><strong>¡Tesoro Encontrado!:</strong> El tesoro es tuyo cuando logres descifrar todos los acertijos. ¡Has demostrado que con tu inteligencia, no hay reto que se te resista!</li>
+                </ol>
+                <div class="youtube-tip">
+                    🎬 <strong>Idea para el Video:</strong> Graben todo el proceso, desde el inicio hasta el final. Puedes narrar tu búsqueda y explicar cómo resolviste cada acertijo. Al final, celebra tu gran victoria.
+            </div>
+            <button class="complete-btn">Marcar como Misión Cumplida</button>
+            </div>
+        </details>
+
+        <hr>
+
+        <div class="note">
+            <h3>✨ Un datico extra para el Equipo ✨</h3>
+            <p>Papá Dani sabe que Adrián tiene una mente brillante que necesita retos. La clave de estas misiones es que él se sienta el líder. Lo más valioso es que lo acompañen y animen, dándole la libertad de explorar. Si quiere hacer las cosas a su manera, ¡perfecto! Confíen en él, pues siempre encuentra la mejor solución.</p>
+            <p>¡Y a mí me encantaría ver esos videos cuando estén listos! 💖</p>
+        </div>
+
+        <div class="controls">
+            <button id="reset-progress-btn">Reiniciar Progreso</button>
+        </div>
+
+        <div class="footer">
+            Hecho con todo el corazón para Adrián.
+        </div>
+    </div>
+
+    <!-- Librería para la animación de confeti -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const storageKey = 'adrianMissionsProgress';
+
+            // Función para actualizar la interfaz de una misión completada
+            function markMissionAsCompleted(missionElement) {
+                const button = missionElement.querySelector('.complete-btn');
+                missionElement.classList.add('completed');
+                if (button) {
+                    button.textContent = '¡Misión Lograda! 🎉';
+                    button.disabled = true;
+                }
+            }
+
+            // Función para reiniciar la interfaz de una misión
+            function resetMissionState(missionElement) {
+                const button = missionElement.querySelector('.complete-btn');
+                missionElement.classList.remove('completed');
+                if (button) {
+                    button.textContent = 'Marcar como Misión Cumplida';
+                    button.disabled = false;
+                }
+            }
+
+            const allMissions = document.querySelectorAll('details[data-mission-id]');
+
+            // 1. Cargar el progreso desde localStorage cuando la página se carga
+            const savedProgress = JSON.parse(localStorage.getItem(storageKey)) || {};
+            allMissions.forEach(mission => {
+                const missionId = mission.dataset.missionId;
+                if (savedProgress[missionId]) {
+                    markMissionAsCompleted(mission);
+                }
+            });
+
+            // 2. Añadir listeners a los botones para guardar el progreso al hacer clic
+            document.querySelectorAll('.complete-btn').forEach(button => {
+                button.addEventListener('click', function() {
+                    const missionElement = this.closest('details');
+                    const missionId = missionElement.dataset.missionId;
+
+                    if (missionId) {
+                        // ¡Lanzar confeti para celebrar!
+                        confetti({
+                            particleCount: 150,
+                            spread: 90,
+                            origin: { y: 0.6 },
+                            colors: ['#ff7043', '#0d47a1', '#388e3c', '#ffb300', '#2196F3']
+                        });
+
+                        // Actualizar la interfaz
+                        markMissionAsCompleted(missionElement);
+
+                        // Guardar en localStorage
+                        const currentProgress = JSON.parse(localStorage.getItem(storageKey)) || {};
+                        currentProgress[missionId] = true;
+                        localStorage.setItem(storageKey, JSON.stringify(currentProgress));
+                    }
+                });
+            });
+
+            // 3. Añadir listener al botón de reiniciar progreso
+            const resetButton = document.getElementById('reset-progress-btn');
+            if (resetButton) {
+                resetButton.addEventListener('click', function() {
+                    if (confirm('¿Estás seguro de que quieres reiniciar todo el progreso? Las misiones volverán a estar sin completar.')) {
+                        localStorage.removeItem(storageKey);
+                        allMissions.forEach(mission => {
+                            resetMissionState(mission);
+                        });
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>

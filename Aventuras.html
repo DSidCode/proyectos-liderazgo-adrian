@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌟 Las Aventuras Creativas de Adrián 🌟</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #e0f7fa; /* Azul muy claro */
+            color: #333;
+            line-height: 1.6;
+            text-align: center;
+        }
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+            border: 5px solid #ff7043; /* Naranja quemado */
+        }
+        h1 {
+            color: #d32f2f; /* Rojo oscuro */
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px #ffcdd2;
+        }
+        h2 {
+            color: #0d47a1; /* Azul oscuro */
+            font-size: 1.8em;
+            margin-top: 30px;
+            border-bottom: 3px solid #80deea;
+            padding-bottom: 10px;
+        }
+        h3 {
+            color: #ff6f00; /* Naranja brillante */
+            font-size: 1.4em;
+            margin-top: 25px;
+        }
+        p {
+            font-size: 1.1em;
+            margin-bottom: 15px;
+            text-align: left;
+        }
+        .activity-box {
+            background-color: #e8f5e9; /* Verde muy claro */
+            border-left: 8px solid #388e3c; /* Verde oscuro */
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 10px;
+            text-align: left;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .activity-box strong {
+            color: #0d47a1; /* Azul oscuro */
+        }
+        .youtube-tip {
+            background-color: #fffde7; /* Amarillo muy claro */
+            border-left: 8px solid #ffb300; /* Amarillo-naranja */
+            padding: 15px;
+            margin-top: 20px;
+            border-radius: 8px;
+            font-style: italic;
+            font-size: 0.95em;
+        }
+        .footer {
+            margin-top: 40px;
+            font-size: 0.9em;
+            color: #777;
+        }
+        .note {
+            background-color: #fff3e0; /* Naranja muy claro */
+            border-left: 8px solid #ff7043; /* Naranja quemado */
+            padding: 15px;
+            margin-top: 30px;
+            border-radius: 8px;
+            font-style: italic;
+        }
+        /* --- Estilos para el Header de Navegación (Responsivo) --- */
+        .main-header {
+            background-color: #0d47a1; /* Azul oscuro */
+            padding: 10px 15px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+        .main-nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        .main-nav li {
+            text-align: center;
+            flex: 1;
+            position: relative; /* Para el tooltip */
+        }
+        .main-nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.9em; /* Botones más pequeños */
+            padding: 8px 12px;
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+            display: inline-block; /* Ajusta el tamaño al contenido */
+        }
+        .main-nav a:hover, .main-nav a.active {
+            background-color: #ff7043; /* Naranja quemado */
+        }
+        .main-nav a span {
+            visibility: hidden; /* Oculto por defecto */
+            opacity: 0;
+            width: 220px;
+            background-color: #ff7043; /* Naranja para que combine */
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 10px;
+            position: absolute;
+            z-index: 10;
+            bottom: 140%; /* Posición sobre el botón */
+            left: 50%;
+            transform: translateX(-50%);
+            transition: opacity 0.3s ease;
+            font-size: 0.8em;
+            font-weight: normal;
+            pointer-events: none; /* Evita que interfiera con el hover */
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        /* Flecha para el tooltip */
+        .main-nav a span::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: #ff7043 transparent transparent transparent;
+        }
+        .main-nav li:hover a span {
+            visibility: visible;
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="main-header">
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="Aventuras.html" class="active">Aventuras Creativas<span>Ideas originales con materiales caseros.</span></a></li>
+                    <li><a href="Aventuras-2.html">Misiones Interactivas<span>Desafíos de ingenio, creatividad y emociones.</span></a></li>
+                    <li><a href="Misiones-de-papa.html">Proyectos de Liderazgo<span>Retos para usar tu ingenio y creatividad.</span></a></li>
+                </ul>
+            </nav>
+        </header>
+        <h1>Las Aventuras de Adrián y la Nonita</h1>
+        <p><em>Escrito y diseñado por papá Dani</em></p>
+        <p>¡Qué hubo, familia! Acá papá Dani, desde Madrid, les mando un saludito y un abrazo gigante a la Nonita y a mi explorador, Adrián en Colombia. Prepárense que se vienen unos días llenos de <strong>magia, creatividad y mucha diversión</strong> en la casa. Aquí les dejo unas ideas bien chéveres para que mi campeón, el niño venido del mar, grabe unos videos espectaculares para su canal de YouTube. ¡La Nonita y él van a ser el mejor equipo!</p>
+        <p>Acuérdense: ¡Lo más importante es gozarse el momento y dejar volar la imaginación!</p>
+
+        <hr>
+
+        <h2>🦖 Día 1: El Reino de los Dinosaurios y la Plastilina 🦖</h2>
+        <div class="activity-box">
+            <h3>🎨 Material Principal: Plastilina 🎨</h3>
+            <p><strong>¡Hola, mi pequeño paleontólogo, Adrián!</strong> Hoy vamos a echar un viajecito en el tiempo a una era lejana con un material bien chévere: la <strong>plastilina</strong>. La Nonita y vos pueden armar un dinosaurio gigante y su mundo prehistórico. ¿Qué tal un T-Rex con unos dientes filosos o un Triceratops con sus tres cachos? Además, pueden moldear un volcán, un río y todas las plantas que había por allá.</p>
+            <div class="youtube-tip">
+                🎬 <strong>Idea para el Video:</strong> Hagan un 'stop motion' de cómo el dinosaurio camina por su reino. Graben bien bonito cómo se mueve despacito y explíquenle a la cámara qué es cada cosa que crearon. ¡Va a ser como un documental del pasado, algo muy especial!</p>
+            </div>
+        </div>
+
+        <hr>
+
+        <h2>🪐 Día 2: Un Viaje al Espacio con LEGO 🪐</h2>
+        <div class="activity-box">
+            <h3>🧱 Material Principal: LEGO 🧱</h3>
+            <p>¡Qué nota lo de ayer, Adrián! Hoy nos vamos a montar en un cohete y a recorrer el espacio con nuestros amigos los <strong>LEGO</strong>. ¿Se imaginan cómo sería un planeta con un anillo? ¿O un misterioso agujero negro? La Nonita y papá Dani les ayudamos a encontrar las piezas que necesiten para esta misión espacial.</p>
+            <p>Vamos a usar todas esas piezas para armar nuestro propio sistema solar. No se compliquen con seguir un plano, solo dejen que las manos creen. Pueden armar su propio cohete 🚀, el planeta Marte 🔴, o un agujero negro que se traga todas las piezas. ¡Que la Nonita le ayude a encontrar las piezas de distintos tamaños para armar los planetas!</p>
+            <div class="youtube-tip">
+                🎬 <strong>Idea para el Video:</strong> Hagan un recorrido con la cámara por toda su creación, como si estuvieran en una nave espacial. ¡Vos podés ser el astronauta que nos muestre el universo que creaste!</p>
+            </div>
+        </div>
+
+        <hr>
+
+        <h2>🏎️ Día 3: La Pista de Ciencia de los Hot Wheels 🧪</h2>
+        <div class="activity-box">
+            <h3>🏎️ Materiales Principales: Hot Wheels, Cartón, Bicarbonato y Vinagre 🧪</h3>
+            <p>Después de tanta construcción y creación, ¡hoy vamos a hacer magia, pero con ciencia! Vamos a mezclar los carros Hot Wheels con un <strong>experimento</strong>.</p>
+            <h4>🏁 ¡La Carrera Propulsada!</h4>
+            <p>Primero, vamos a armar una rampa o una pista para tu Hot Wheels. Pueden usar un pedazo de cartón o un libro bien grande. Luego, vamos a hacer un "propulsor". Con un poquito de bicarbonato de sodio en la parte de atrás del carro y una gota de vinagre, ¡el carro saldrá volando! La Nonita puede ayudarles con cuidado a armar todo. 🧡❤️</p>
+            <div class="youtube-tip">
+                🎬 <strong>Idea para el Video:</strong> Graben la carrera del carro propulsado en cámara lenta para que se vea bien emocionante. Mientras grabas, ¡podés narrar lo que está pasando, como un científico que explica por qué el carro se mueve!</p>
+            </div>
+
+            <h4>🚀 ¡La Erupción del Volcán de Autos!</h4>
+            <p><strong>Otra ñapa:</strong> Si se animan, podemos crear un volcán usando la plastilina. Una vez listo, le ponemos bicarbonato y vinagre para que estalle, ¡pero esta vez con un carro Hot Wheels escapando de la lava!</p>
+            <div class="youtube-tip">
+                🎬 <strong>Idea para el Video:</strong> Graben el carro Hot Wheels subiendo la rampa mientras el volcán hace erupción. ¡Será una aventura épica que a todos nos va a encantar!</p>
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="note">
+            <h3>✨ ¡Un datico extra! ✨</h3>
+            <p>Nonita, acuérdese que lo más importante es que Adrián se sienta <strong>libre para crear</strong>, sin reglas ni afanes. Dígale que cada pieza, cada molde y cada color que escoja es perfecto. ¡Él va a ser un gran director y un artista de los buenos!</p>
+            <p>¡Y a mí me encantaría ver esos videos cuando estén listos! 💖</p>
+        </div>
+
+        <div class="footer">
+            Hecho con todo el corazón para Adrián.
+        </div>
+    </div>
+</body>
+</html>
